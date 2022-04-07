@@ -1,0 +1,64 @@
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Cung cap thong tin BDS</h1>
+    <div class="col-lg-6 mx-auto">
+        <P class="lead">Dien thong tin ve du an/manh dat cua ban vao phan thong tin ben duoi.</P>
+    </div>
+</div>
+
+
+<div class="row justify-content-center">
+    <% if(infoSubmitObj != '') { %>
+        <div class="col-8 alert alert-success" role="alert">
+            <%= infoSubmitObj %>
+        </div>
+    <% } %>
+
+    <% if(infoErrorsObj != '') { %>
+        <div class="col-8 alert alert-danger" role="alert">
+            <%= infoErrorsObj[0].message %>
+        </div>
+    <% } %>
+
+    <div class="col-8">
+        <form action="/submit-details" enctype="multipart/form-data" method="POST">
+
+            <div class="row g-3">
+                <div class="col-12">
+                    <label for="phone" class="form-label">So dien thoai: </label>
+                    <input type="text" name="phone" id="phone" class="form-control">
+                </div>
+
+                <div class="col-12">
+                    <label for="name" class="form-label">Ten va dia chi khu vuc</label>
+                    <input type="text" name="name" id="name" class="form-control" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="description" class="form-label">Thong tin chi tiet</label>
+                    <textarea name="description" id="description" class="form-control" cols="30" rows="4"></textarea>
+                </div>
+
+                <div class="col-12">
+                    <label for="category">Chon khu vuc</label>
+                    <select class="form-select form control" name="category" aria-label="Category">
+                        <option selected>Chon khu vuc</option>
+                        <option value="Quan 2">Quan 2</option>
+                        <option value="Quan 3">Quan 3</option>
+                        <option value="Quan 4">Quan 4</option>
+                        <option value="Quan 5">Quan 5</option>
+                        <option value="Quan 6">Quan 6</option>
+                    </select> 
+                </div>
+
+                <div class="col 12"> 
+                    <label for="image">Hinh anh khu vuc</label>
+                    <input type="file" class="form-control" name="image" accept="image/*">
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Hoan thanh</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

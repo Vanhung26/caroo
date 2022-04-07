@@ -1,0 +1,32 @@
+<% if(details != null ) { %>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><%- details.name %></li>
+        </ol>
+      </nav>
+
+      <div class="row">
+
+        <div class="col-12 col-md-4">
+            <img src="/uploads/<%- details.image %>" class="img-fluid sticky-top" style="top: 20px;" alt="<%- details.name %>" loading="lazy">
+        </div>
+
+        <div class="col-12 col-md-8">
+            <div class="row">
+                <div class="col-12"><h1><%- details.name %></h1></div>
+                <div class="col-12 mb-4"><i class="bi bi-tag"></i> <%- details.category %></div>
+                <div class="col-12" style="white-space: pre-line;">
+                    <h4>Thong tin khu dat</h4>
+                    <%- details.description %>
+                    <%- details.phone %>
+                </div>
+            </div>
+        </div>
+
+      </div>
+
+
+
+<% } %>
